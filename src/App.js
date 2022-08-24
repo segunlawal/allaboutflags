@@ -5,7 +5,7 @@ import FindTheFlag from './Pages/FindTheFlag';
 import Navbar from './Navbar';
 import GuessTheFlag from './Pages/GuessTheFlag';
 import getAllCountries from './FetchCountry';
-// import ErrorPage from './Pages/ErrorPage';
+import ErrorPage from './Pages/ErrorPage';
 import Home from './Pages/Home';
 
 const AppContainer = styled.div`
@@ -14,6 +14,7 @@ const AppContainer = styled.div`
   min-height: 100vh;
   margin: 0;
 `;
+
 function App() {
   /* eslint-disable no-unused-vars */
 
@@ -26,8 +27,11 @@ function App() {
     <Router>
       <AppContainer>
         <Navbar />
+
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/allaboutflags" element={<Home />} />
           <Route
             path="/findtheflag"
             element={<FindTheFlag allcountries={allcountries} />}
@@ -36,7 +40,7 @@ function App() {
             path="/guesstheflag"
             element={<GuessTheFlag allcountries={allcountries} />}
           />
-          {/* <Route path="*" element={<ErrorPage />} /> */}
+          <Route path="*" element={<ErrorPage />} />
           <Route />
         </Routes>
       </AppContainer>

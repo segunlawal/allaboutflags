@@ -31,6 +31,7 @@ function Navbar() {
         <label htmlFor="hamburger">&#9776;</label>
         <input type="checkbox" id="hamburger" />
         <div id="hamitems">
+          <a href="/home">Home</a>
           <a href="/findtheflag">FindTheFlag</a>
           <a href="/guesstheflag">GuessTheFlag</a>
         </div>

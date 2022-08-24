@@ -36,6 +36,7 @@ function GuessTheFlag(props) {
       />
       <NextButton type="submit">Next</NextButton>
       <p>{guessValue}</p>
+      <p>COMING SOON...</p>
     </div>
   );
 }

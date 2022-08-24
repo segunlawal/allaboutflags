@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Welcome = styled.p`
   font-size: 20px;
   font-weight: 800;
+  padding-top: 230px;
 `;
 
 function Home() {
