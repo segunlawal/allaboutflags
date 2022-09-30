@@ -17,10 +17,13 @@ const Loading = styled.p`
 function Greeting(props) {
   const { allcountries } = props;
   const [inputValue, setinputValue] = useState();
+  console.log(allcountries);
+
   const allthecountries = allcountries?.map(onecountry => ({
     name: onecountry.name.common,
     value: onecountry.name.common,
     flag: onecountry.flags.png,
+    continent: onecountry.continents[0],
   }));
 
   allthecountries?.sort((a, b) => a.name.localeCompare(b.name));
@@ -36,7 +39,7 @@ function Greeting(props) {
 
   return options == null ? (
     <div>
-      <Loading>Loading...</Loading>
+      <Loading className="text-white">Loading...</Loading>
       <ClipLoader
         // color={color}
         // loading={loading}
@@ -45,7 +48,10 @@ function Greeting(props) {
       />
     </div>
   ) : (
-    <div className="findtheflag">
+    <div className="findtheflag pt-28">
+      <p className="pb-5 font-bold text-white">
+        Type in a country to reveal its flag and continent
+      </p>
       <SelectSearch
         options={options}
         value={inputValue}
@@ -54,13 +60,21 @@ function Greeting(props) {
         filterOptions={fuzzySearch}
         placeholder="Change country"
       />
-      <div>
-        <p>{finalCountryObj.name}</p>
+      <div className="pt-5">
+        <p className="font-semibold text-white uppercase">
+          {finalCountryObj.name}
+        </p>
         {finalCountryObj.name && (
           <img
+            className="mx-auto shadow-xl"
             src={`${finalCountryObj.flag}`}
             alt={`flag of ${finalCountryObj.name}`}
           />
+        )}
+        {finalCountryObj.continent && (
+          <p className="font-semibold pt-3 text-white">
+            Continent: {finalCountryObj.continent}
+          </p>
         )}
       </div>
     </div>

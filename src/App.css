@@ -1,14 +1,30 @@
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
 .App {
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
+.navbar,
+.findtheflag {
+  background: #172755;
+}
+.section-1 {
+  background: #172755;
+  background-image: url(./assets/subtract.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 15% 50%;
+}
+
 .select-search__input {
   display: block;
   margin: auto;
   height: 36px;
-  width: 30%;
+  /* width: 20rem; */
   padding: 0 40px 0 16px;
-  background: #fff;
+  background: #ffff;
   border: 1px solid transparent;
   box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.15);
   border-radius: 3px;
@@ -55,7 +71,7 @@
   display: block;
   margin: auto;
   height: 36px;
-  width: 30%;
+  width: 17rem;
   padding: 0 40px 0 16px;
   background: #fff;
   border: 1px solid transparent;
@@ -67,72 +83,8 @@
   line-height: 36px;
 }
 
-#hamnav {
-  width: 100%;
-  /* display: flex;
-  justify-content: center; */
-  /* background: #000; */
-}
-
-#hamitems {
-  display: flex;
-}
-#hamitems a {
-  flex-grow: 1;
-  flex-basis: 0;
-  padding: 20px;
-  font-weight: 500;
-  color: black;
-  text-decoration: none;
-  text-align: center;
-}
-#hamitems a:hover {
-  background: aqua;
-}
-#hamnav label,
-#hamburger {
-  display: none;
-  cursor: pointer;
-}
-
-/* [ON SMALL SCREENS] */
-@media screen and (max-width: 768px) {
-  /* (A) BREAK INTO VERTICAL MENU */
-  #hamitems a {
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    border-top: 1px solid #333;
+@media only screen and (max-width: 320px) and (min-width: 200px) {
+  .home {
+    height: 30rem;
   }
-
-  #hamnav {
-    display: flex;
-    justify-content: end;
-    margin-right: 15px;
-  }
-
-  /* (B) SHOW HAMBURGER ICON */
-  #hamnav label {
-    display: inline-block;
-    color: black;
-    position: fixed;
-    /* background: #a02620; */
-    font-style: normal;
-    font-size: 2em;
-    padding: 10px;
-  }
-
-  /* (C) TOGGLE SHOW/HIDE MENU */
-  #hamitems {
-    display: none;
-  }
-  #hamnav input:checked ~ #hamitems {
-    display: block;
-    width: 60%;
-    margin-top: 70px;
-  }
-}
-
-.findtheflag {
-  padding: 150px;
 }
