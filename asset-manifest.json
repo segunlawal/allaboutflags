@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/allaboutflags/static/css/main.3d76f595.css",
-    "main.js": "/allaboutflags/static/js/main.085b2e2d.js",
-    "static/js/787.d9312eb8.chunk.js": "/allaboutflags/static/js/787.d9312eb8.chunk.js",
-    "static/media/allaboutflags.png": "/allaboutflags/static/media/allaboutflags.79ce16cb7f870c75aca2.png",
+    "main.css": "/allaboutflags/static/css/main.9b4814cc.css",
+    "main.js": "/allaboutflags/static/js/main.0ca777fc.js",
+    "static/js/787.7080822a.chunk.js": "/allaboutflags/static/js/787.7080822a.chunk.js",
+    "static/media/imgbin_national-flag-tree-png.png": "/allaboutflags/static/media/imgbin_national-flag-tree-png.cc02ea86733ba8c82e60.png",
+    "static/media/allaboutflags.png": "/allaboutflags/static/media/allaboutflags.b6ac976e6522e3e765b4.png",
+    "static/media/comingSoon.svg": "/allaboutflags/static/media/comingSoon.a0775cb2abc6f8f855dfc2da4adcea4f.svg",
+    "static/media/error404.svg": "/allaboutflags/static/media/error404.f2c1828ca13212962adb0e2845ea5464.svg",
+    "static/media/subtract.png": "/allaboutflags/static/media/subtract.e1f08765a66046a4e70b.png",
     "index.html": "/allaboutflags/index.html",
-    "main.3d76f595.css.map": "/allaboutflags/static/css/main.3d76f595.css.map",
-    "main.085b2e2d.js.map": "/allaboutflags/static/js/main.085b2e2d.js.map",
-    "787.d9312eb8.chunk.js.map": "/allaboutflags/static/js/787.d9312eb8.chunk.js.map"
+    "main.9b4814cc.css.map": "/allaboutflags/static/css/main.9b4814cc.css.map",
+    "main.0ca777fc.js.map": "/allaboutflags/static/js/main.0ca777fc.js.map",
+    "787.7080822a.chunk.js.map": "/allaboutflags/static/js/787.7080822a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d76f595.css",
-    "static/js/main.085b2e2d.js"
+    "static/css/main.9b4814cc.css",
+    "static/js/main.0ca777fc.js"
   ]
 }
