@@ -1,14 +1,8 @@
 import styled from 'styled-components';
 import SelectSearch, { fuzzySearch } from 'react-select-search';
-import { useState, CSSProperties } from 'react';
-import ClipLoader from 'react-spinners/ClipLoader';
+import { useState } from 'react';
 import '../App.css';
 
-const override: CSSProperties = {
-  display: 'block',
-  margin: '0 auto',
-  borderColor: 'blue',
-};
 const Loading = styled.p`
   font-size: 20px;
   font-weight: bold;
@@ -17,7 +11,7 @@ const Loading = styled.p`
 function Greeting(props) {
   const { allcountries } = props;
   const [inputValue, setinputValue] = useState();
-  console.log(allcountries);
+  // console.log(allcountries);
 
   const allthecountries = allcountries?.map(onecountry => ({
     name: onecountry.name.common,
@@ -40,12 +34,6 @@ function Greeting(props) {
   return options == null ? (
     <div>
       <Loading className="text-white">Loading...</Loading>
-      <ClipLoader
-        // color={color}
-        // loading={loading}
-        cssOverride={override}
-        size={70}
-      />
     </div>
   ) : (
     <div className="findtheflag pt-28">

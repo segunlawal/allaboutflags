@@ -1,15 +1,8 @@
-import { useState, useEffect, CSSProperties } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { Button } from '@mui/material';
-
 import '../App.css';
 
-const override: CSSProperties = {
-  display: 'block',
-  margin: '0 auto',
-  borderColor: 'blue',
-};
 const Loading = styled.p`
   font-size: 20px;
   font-weight: bold;
@@ -56,12 +49,12 @@ function GuessTheFlag(props) {
   return allthecountries == null ? (
     <div>
       <Loading className="text-white">Loading...</Loading>
-      <ClipLoader
+      {/* <ClipLoader
         // color={color}
         // loading={loading}
         cssOverride={override}
         size={70}
-      />
+      /> */}
     </div>
   ) : (
     <div className="pt-20">

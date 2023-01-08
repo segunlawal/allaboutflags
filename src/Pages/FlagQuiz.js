@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BeginQuiz from './BeginQuiz';
 // import { ReactComponent as ComingSoon } from '../assets/comingSoon.svg';
 
 function FlagQuiz() {
@@ -10,7 +11,7 @@ function FlagQuiz() {
   return (
     <div className="flex flex-col justify-content-center">
       {startQuiz ? (
-        <div className="text-white">Quiz has started</div>
+        <BeginQuiz />
       ) : (
         <>
           <p className="text-white">Start begin the quiz</p>
