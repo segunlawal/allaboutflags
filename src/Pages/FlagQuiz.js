@@ -2,7 +2,8 @@ import { useState } from 'react';
 import BeginQuiz from './BeginQuiz';
 // import { ReactComponent as ComingSoon } from '../assets/comingSoon.svg';
 
-function FlagQuiz() {
+function FlagQuiz(props) {
+  const { allcountries } = props;
   const [startQuiz, setStartQuiz] = useState(false);
   const handleStart = () => {
     setStartQuiz(true);
@@ -11,10 +12,10 @@ function FlagQuiz() {
   return (
     <div className="flex flex-col justify-content-center">
       {startQuiz ? (
-        <BeginQuiz />
+        <BeginQuiz allcountries={allcountries} />
       ) : (
         <>
-          <p className="text-white">Start begin the quiz</p>
+          <p className="text-white">Start the quiz</p>
           <button
             onClick={handleStart}
             type="submit"

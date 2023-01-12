@@ -24,7 +24,7 @@ function Home() {
             <a href="/guesstheflag">
               <Button variant="contained">Guess</Button>
             </a>
-            <a href="/">
+            <a href="/flagquiz">
               <Button variant="contained">Quiz</Button>
             </a>
           </div>
