@@ -5,7 +5,6 @@ import Result from './Result';
 
 function Quiz(props) {
   const { quizQuestions } = props;
-  //   console.log(quizQuestions);
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
@@ -15,10 +14,12 @@ function Quiz(props) {
     wrongAnswers: 0,
   });
   const [showResult, setShowResult] = useState(false);
+  const [userChoice, setUserChoice] = useState([]);
   const { question, choices, correctAnswer } = quizQuestions[activeQuestion];
 
   const onClickNext = () => {
     setSelectedAnswerIndex(null);
+    setUserChoice([...userChoice, choices[selectedAnswerIndex]]);
     setResult(prev =>
       selectedAnswer
         ? {
@@ -95,7 +96,11 @@ function Quiz(props) {
           </div>
         </div>
       ) : (
-        <Result quizQuestions={quizQuestions} result={result} />
+        <Result
+          quizQuestions={quizQuestions}
+          result={result}
+          userChoice={userChoice}
+        />
       )}
     </div>
   );
