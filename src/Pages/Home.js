@@ -1,4 +1,5 @@
 import { Button } from '@mui/material';
+import Footer from '../components/Footer';
 
 function Home() {
   return (
@@ -38,6 +39,7 @@ function Home() {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

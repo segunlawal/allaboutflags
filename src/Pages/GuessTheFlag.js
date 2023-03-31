@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Button } from '@mui/material';
 import '../App.css';
+import Footer from '../components/Footer';
 
 const Loading = styled.p`
   font-size: 20px;
@@ -98,6 +99,7 @@ function GuessTheFlag(props) {
           Next
         </Button>
       </div>
+      <Footer />
     </div>
   );
 }

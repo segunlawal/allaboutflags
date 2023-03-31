@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@mui/material';
 import QuizQuestions from '../Quiz/QuizQuestions';
+import Footer from '../components/Footer';
 
 function FlagQuiz(props) {
   const { allcountries } = props;
@@ -8,7 +9,10 @@ function FlagQuiz(props) {
   const [startQuiz, setStartQuiz] = useState(false);
 
   return startQuiz ? (
-    <QuizQuestions allcountries={allcountries} />
+    <div>
+      <QuizQuestions allcountries={allcountries} />
+      <Footer />
+    </div>
   ) : (
     <div>
       <Button
@@ -21,6 +25,7 @@ function FlagQuiz(props) {
       >
         Start Quiz
       </Button>
+      <Footer />
     </div>
   );
 }
