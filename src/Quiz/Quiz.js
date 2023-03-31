@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useState } from 'react';
-import './Quiz.css';
 /* eslint-disable no-console */
 
 function Quiz(props) {
@@ -48,19 +47,21 @@ function Quiz(props) {
   const addLeadingZero = number => (number > 9 ? number : `0${number}`);
 
   return (
-    <div className="quiz-container">
+    <div className="">
       {!showResult ? (
         <div>
           <div>
-            <h1>Quiz</h1>
-            <span className="active-question-no">
-              {addLeadingZero(activeQuestion + 1)}
-            </span>
-            <span className="total-question">
-              /{addLeadingZero(quizQuestions.length)}
-            </span>
+            <div className="flex items-center justify-center mx-auto space-x-1">
+              <span className="text-gray-300 font-medium text-lg">
+                {addLeadingZero(activeQuestion + 1)}
+              </span>
+              <span className="text-gray-400 font-medium text-lg">/</span>
+              <span className="text-gray-500 font-medium text-lg">
+                {addLeadingZero(quizQuestions.length)}
+              </span>
+            </div>
           </div>
-          <img src={question} alt="flag" />
+          <img src={question} alt="flag" className="mx-auto" />
           <ul>
             {choices.map((answer, index) => (
               <li
@@ -72,18 +73,21 @@ function Quiz(props) {
                 }}
                 key={answer}
                 className={
-                  selectedAnswerIndex === index ? 'selected-answer' : null
+                  selectedAnswerIndex === index
+                    ? 'bg-[#1976d2] border-2 border-[#1976d2] sm:w-[30%] w-[70%] mx-auto py-3 my-3 rounded-md'
+                    : 'border-2 sm:w-[30%] w-[70%] mx-auto py-3 my-3 rounded-md cursor-pointer'
                 }
               >
                 {answer}
               </li>
             ))}
           </ul>
-          <div className="flex-right">
+          <div className="sm:w-[30%] w-[70%] mx-auto flex justify-end">
             <button
               type="button"
               onClick={onClickNext}
               disabled={selectedAnswerIndex === null}
+              className="text-lg bg-gradient-to-b from-[#1976d2] to-transparent px-5 py-2 rounded-sm"
             >
               {activeQuestion === quizQuestions.length - 1 ? 'Finish' : 'Next'}
             </button>

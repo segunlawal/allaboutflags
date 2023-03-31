@@ -14,9 +14,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const handleClickAway = () => {
-    // console.log('clicked');
-  };
+  const handleClickAway = () => {};
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <Disclosure as="nav" className="navbar">
@@ -39,14 +37,14 @@ export default function Navbar() {
                     <NavLink reloadDocument to="/">
                       <img
                         className="block h-12 w-auto lg:hidden"
-                        src={require('./assets/allaboutflags.png')}
+                        src={require('../assets/allaboutflags.png')}
                         alt="Your Company"
                       />
                     </NavLink>
                     <NavLink reloadDocument to="/">
                       <img
                         className="hidden h-12 w-auto lg:block"
-                        src={require('./assets/allaboutflags.png')}
+                        src={require('../assets/allaboutflags.png')}
                         alt="Your Company"
                       />
                     </NavLink>

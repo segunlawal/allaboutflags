@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import QuizQuestions from './QuizQuestions';
+import { Button } from '@mui/material';
+import QuizQuestions from '../Quiz/QuizQuestions';
 
 function FlagQuiz(props) {
   const { allcountries } = props;
@@ -10,15 +11,16 @@ function FlagQuiz(props) {
     <QuizQuestions allcountries={allcountries} />
   ) : (
     <div>
-      <button
+      <Button
+        variant="contained"
         type="submit"
         onClick={() => {
           setStartQuiz(true);
         }}
-        className="px-3 rounded-sm bg-yellow-400 "
+        className="px-3 rounded-sm "
       >
-        Start
-      </button>
+        Start Quiz
+      </Button>
     </div>
   );
 }
