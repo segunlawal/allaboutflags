@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useState } from 'react';
+import Result from './Result';
 /* eslint-disable no-console */
 
 function Quiz(props) {
@@ -94,21 +95,7 @@ function Quiz(props) {
           </div>
         </div>
       ) : (
-        <div className="result">
-          <h3>Result</h3>
-          <p>
-            Total Question: <span>{quizQuestions.length}</span>
-          </p>
-          <p>
-            Total Score:<span> {result.score}</span>
-          </p>
-          <p>
-            Correct Answers:<span> {result.correctAnswers}</span>
-          </p>
-          <p>
-            Wrong Answers:<span> {result.wrongAnswers}</span>
-          </p>
-        </div>
+        <Result quizQuestions={quizQuestions} result={result} />
       )}
     </div>
   );
