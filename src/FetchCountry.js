@@ -9,4 +9,5 @@ async function getAllCountries() {
 
   return response.json();
 }
+
 export default getAllCountries;
