@@ -2,15 +2,7 @@ import { Button } from '@mui/material';
 
 function Result(props) {
   const { quizQuestions, result, userChoice } = props;
-  //   console.log(quizQuestions) ;
-  console.log(userChoice);
   const centScored = (result.score / quizQuestions.length) * 100;
-
-  // Collect all correct answers in an array
-  // eslint-disable-next-line no-unused-vars
-  const allCorrectAnswers = quizQuestions.map(
-    quizQuestion => quizQuestion.correctAnswer
-  );
 
   const correctionsMade = quizQuestions.map((oneQuestion, index) => (
     <div key={oneQuestion.correctAnswer} className="mx-auto">
@@ -18,22 +10,10 @@ function Result(props) {
 
       {oneQuestion.choices.map(answer => (
         <ul>
-          <li
-            key={answer}
-            // eslint-disable-next-line no-nested-ternary
-            // className={
-            //   answer === quizQuestions[index].correctAnswer
-            //     ? 'border-b-2 border-x-2 bg-green-600'
-            //     : answer === userChoice[index]
-            //     ? 'border-b-2 border-x-2 bg-red-600'
-            //     : 'border-b-2 border-x-2'
-            // }
-            className="border-b-2 border-x-2"
-          >
+          <li key={answer} className="border-b-2 border-x-2">
             <span className="flex justify-center gap-3">
               {answer}
               {answer === quizQuestions[index].correctAnswer && (
-                // <p className="bg-green-600">correct</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -74,21 +54,23 @@ function Result(props) {
   ));
 
   return (
-    <div>
-      <h3>Result</h3>
-      <p>You scored {centScored}%!</p>
-      <p>
+    <div className="py-5">
+      <h3 className="text-xl font-bold">RESULT</h3>
+      <p className="font-semibold text-lg text-yellow-400">
+        You scored {centScored}%!
+      </p>
+      <p className="font-semibold text-lg text-yellow-400">
         You got {result.score} out of {quizQuestions.length} questions
       </p>
       <Button
         variant="contained"
         type="submit"
-        // onClick={() => {
-        //   setStartQuiz(true);
-        // }}
+        onClick={() => {
+          window.location.reload();
+        }}
         className="px-3 rounded-sm"
       >
-        Start New Quiz
+        End Quiz
       </Button>
       <div className="mt-5 grid lg:grid-cols-4 gap-4 md:grid-cols-2 sm:grid-cols-1">
         {correctionsMade}

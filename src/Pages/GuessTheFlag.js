@@ -9,7 +9,6 @@ const Loading = styled.p`
 `;
 
 function GuessTheFlag(props) {
-  /* eslint-disable no-unused-vars */
   const { allcountries } = props;
   const [guessValue, setGuessValue] = useState('');
   const [randNumber, setRandNumber] = useState('');
@@ -19,8 +18,6 @@ function GuessTheFlag(props) {
     name: onecountry.name.common,
     flag: onecountry.flags.png,
   }));
-
-  // console.log(allthecountries);
 
   function handleChange(event) {
     setGuessValue(event.target.value);

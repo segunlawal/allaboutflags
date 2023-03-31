@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useState } from 'react';
 import Result from './Result';
-/* eslint-disable no-console */
 
 function Quiz(props) {
   const { quizQuestions } = props;
