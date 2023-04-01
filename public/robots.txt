@@ -1,3 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow:
+Sitemap: https://allaboutflags.netlify.app/sitemap.xml
+Sitemap: https://allaboutflags.netlify.app/sitemap2.xml
+Sitemap: https://allaboutflags.netlify.app/sitemap3.xml
+Sitemap: https://allaboutflags.netlify.app/sitemap4.xml
