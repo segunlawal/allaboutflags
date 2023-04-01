@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FindTheFlag from './Pages/FindTheFlag';
-import Navbar from './Navbar';
+import Navbar from './components/Navbar';
 import GuessTheFlag from './Pages/GuessTheFlag';
 import FlagQuiz from './Pages/FlagQuiz';
-import getAllCountries from './FetchCountry';
+import getAllCountries from './components/FetchCountry';
 import ErrorPage from './Pages/ErrorPage';
 import Home from './Pages/Home';
 

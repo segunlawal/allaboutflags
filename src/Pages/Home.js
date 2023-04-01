@@ -1,20 +1,21 @@
 import { Button } from '@mui/material';
+import Footer from '../components/Footer';
 
 function Home() {
   return (
     <div className="">
-      <div className="home flex section-1 sm:h-auto sm:h-screen h-128 ">
+      <div className="home flex section-1 sm:h-screen h-128 ">
         <div className="lg:w-1/2 my-auto">
-          <p className="pl-10 text-left text-white text-left text-3xl font-bold lg:w-3/5 leading-7 sm:pl-20">
+          <p className="pl-10 text-left text-white text-3xl font-bold lg:w-3/5 leading-7 sm:pl-20">
             Get to know about flags of all countries in the world
           </p>
-          <p className="pl-10 text-left text-white text-left text-sm lg:w-3/5 leading-5 font-thin pt-4 sm:pl-20">
+          <p className="pl-10 text-left text-white text-sm lg:w-3/5 leading-5 font-thin pt-4 sm:pl-20">
             Search for any flag in the world by country.
           </p>
-          <p className="pl-10 text-left text-white text-left text-sm lg:w-3/5 leading-5 font-thin  sm:pl-20">
+          <p className="pl-10 text-left text-white text-sm lg:w-3/5 leading-5 font-thin  sm:pl-20">
             Guess random flags.
           </p>
-          <p className="pl-10 text-left text-white text-left text-sm lg:w-3/5 leading-5 font-thin pb-4 sm:pl-20">
+          <p className="pl-10 text-left text-white text-sm lg:w-3/5 leading-5 font-thin pb-4 sm:pl-20">
             Take a quiz to test your flag knowledge.
           </p>
           <div className="pl-10 sm:pl-20 pt-3 flex gap-3">
@@ -24,7 +25,7 @@ function Home() {
             <a href="/guesstheflag">
               <Button variant="contained">Guess</Button>
             </a>
-            <a href="/">
+            <a href="/flagquiz">
               <Button variant="contained">Quiz</Button>
             </a>
           </div>
@@ -38,6 +39,7 @@ function Home() {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

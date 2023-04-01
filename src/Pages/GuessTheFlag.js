@@ -1,22 +1,15 @@
-import { useState, useEffect, CSSProperties } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { Button } from '@mui/material';
-
 import '../App.css';
+import Footer from '../components/Footer';
 
-const override: CSSProperties = {
-  display: 'block',
-  margin: '0 auto',
-  borderColor: 'blue',
-};
 const Loading = styled.p`
   font-size: 20px;
   font-weight: bold;
 `;
 
 function GuessTheFlag(props) {
-  /* eslint-disable no-unused-vars */
   const { allcountries } = props;
   const [guessValue, setGuessValue] = useState('');
   const [randNumber, setRandNumber] = useState('');
@@ -27,11 +20,24 @@ function GuessTheFlag(props) {
     flag: onecountry.flags.png,
   }));
 
-  // console.log(allthecountries);
-
   function handleChange(event) {
     setGuessValue(event.target.value);
   }
+  /* eslint-enable no-unused-vars */
+  const handleShow = () => {
+    setShowAnswer(prevans => !prevans);
+  };
+  const handleNext = () => {
+    setRandNumber(Math.floor(Math.random() * 249));
+    setShowAnswer(false);
+    setGuessValue('');
+  };
+  const handleKeyPress = event => {
+    if (event.key === 'Enter') {
+      document.getElementById('next-button').click();
+    }
+  };
+
   useEffect(() => {
     setRandNumber(Math.floor(Math.random() * 249));
   }, []);
@@ -43,25 +49,10 @@ function GuessTheFlag(props) {
   if (allthecountries && guessValue.toLowerCase() === flagName.toLowerCase()) {
     rightOrWrong = true;
   } else rightOrWrong = false;
-  /* eslint-enable no-unused-vars */
-  const handleShow = () => {
-    setShowAnswer(prevans => !prevans);
-  };
-  const handleNext = () => {
-    setRandNumber(Math.floor(Math.random() * 249));
-    setShowAnswer(false);
-    setGuessValue('');
-  };
 
   return allthecountries == null ? (
     <div>
       <Loading className="text-white">Loading...</Loading>
-      <ClipLoader
-        // color={color}
-        // loading={loading}
-        cssOverride={override}
-        size={70}
-      />
     </div>
   ) : (
     <div className="pt-20">
@@ -78,6 +69,7 @@ function GuessTheFlag(props) {
         className="guess-the-flag-input"
         placeholder="Guess the country"
         onChange={handleChange}
+        onKeyPress={handleKeyPress}
         value={guessValue}
         spellCheck="false"
         autoComplete="off"
@@ -103,10 +95,11 @@ function GuessTheFlag(props) {
         <Button variant="contained" onClick={handleShow}>
           {showAnswer ? `Hide Answer` : `Show Answer`}
         </Button>
-        <Button variant="contained" onClick={handleNext}>
+        <Button variant="contained" onClick={handleNext} id="next-button">
           Next
         </Button>
       </div>
+      <Footer />
     </div>
   );
 }

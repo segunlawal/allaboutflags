@@ -1,11 +1,31 @@
-import React from 'react';
-import { ReactComponent as ComingSoon } from '../assets/comingSoon.svg';
+import { useState } from 'react';
+import { Button } from '@mui/material';
+import QuizQuestions from '../Quiz/QuizQuestions';
+import Footer from '../components/Footer';
 
-function FlagQuiz() {
-  return (
+function FlagQuiz(props) {
+  const { allcountries } = props;
+
+  const [startQuiz, setStartQuiz] = useState(false);
+
+  return startQuiz ? (
     <div>
-      <p className="text-2xl text-white mt-20 text-pink-400">COMING SOON</p>
-      <ComingSoon className="w-96 mx-auto h-96 -mt-10" />
+      <QuizQuestions allcountries={allcountries} />
+      <Footer />
+    </div>
+  ) : (
+    <div>
+      <Button
+        variant="contained"
+        type="submit"
+        onClick={() => {
+          setStartQuiz(true);
+        }}
+        className="px-3 rounded-sm "
+      >
+        Start Quiz
+      </Button>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactComponent as ErrorDoodle } from '../assets/error404.svg';
+import Footer from '../components/Footer';
 
 function ErrorPage() {
   return (
@@ -9,6 +10,7 @@ function ErrorPage() {
       <p className="underline text-white text-xl">
         <a href="/">Return to homepage</a>
       </p>
+      <Footer />
     </div>
   );
 }
