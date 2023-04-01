@@ -15,6 +15,13 @@ function FlagQuiz(props) {
     </div>
   ) : (
     <div>
+      <p className="text-white">
+        Take a quiz consisting of ten (10) multiple choice questions.
+      </p>
+      <p className="text-white pb-2">
+        Each question has a flag with four country names as options to select
+        from
+      </p>
       <Button
         variant="contained"
         type="submit"
